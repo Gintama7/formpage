@@ -8,10 +8,15 @@ let timeInput = document.querySelector('[name="time"]');
 form.addEventListener('submit',function(e){   
         e.preventDefault();        
         form.classList.add('was-validated');
-        localStorage.setItem('name',nameInput.value);
-        localStorage.setItem('email',emailInput.value);
-        localStorage.setItem('phone',phoneInput.value);
-        localStorage.setItem('date',dateInput.value);
-        localStorage.setItem('time',timeInput.value);      
+        let user1 = {
+            name:nameInput.value,
+            email:emailInput.value,
+            phone:phoneInput.value,
+            date:dateInput.value,
+            time:timeInput.value
+        }
+       let obj1 = JSON.stringify(user1);
+       
+       localStorage.setItem("user",obj1);
 })
 
